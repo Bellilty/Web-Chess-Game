@@ -1,0 +1,298 @@
+html,
+body {
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: #f2f2f2;
+}
+
+div * {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+#turn {
+    max-width: 451px;
+    max-height: 30px;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    float: right;
+    border-radius: 8px;
+    border: 1px solid #444;
+    text-align: center;
+    padding: 5px 0 0 0;
+    background: #333;
+    color: white;
+    font-weight: bold;
+    font-size: 16px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+    transition: .85s linear;
+}
+
+.turnhighlight {
+    background: #5cb85c !important;
+    color: #fff;
+}
+
+#game {
+    max-width: 504px;
+    max-height: 504px;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    margin: 20px auto;
+}
+
+.cellprefix {
+    width: 100%;
+    height: 100%;
+    max-width: 50px;
+    max-height: 50px;
+    float: left;
+    margin: 3px;
+    padding: 15px 0 0 20px;
+    color: #555;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.gamecell {
+    border: 1px solid #000;
+    width: 100%;
+    height: 100%;
+    max-width: 50px;
+    max-height: 50px;
+    float: left;
+    margin: 3px;
+    transition: all 0.3s ease-in-out;
+    border-radius: 6px;
+    font-size: 30pt;
+    padding: 0 0 0 6px;
+    cursor: pointer;
+    z-index: 1;
+    box-shadow: inset 0 0 3px rgba(0, 0, 0, 0.2);
+}
+
+.gamecell:hover {
+    color: #fff;
+    background: rgba(37, 88, 228, 0.712);
+    z-index: 2;
+    transform: translate(5px, -5px);
+    animation: neonBlueText 1.5s ease-in-out infinite alternate;
+}
+
+.grey {
+    background: #b58863;
+}
+
+.gamecell:not(.grey) {
+    background: #f0d9b5;
+}
+
+.green {
+    background: rgb(65, 161, 73) !important;
+}
+
+.neonblue_txt {
+    animation: neonBlueText 1.5s ease-in-out infinite alternate;
+}
+
+.neonorange_txt {
+    animation: neonOrangeText 1.5s ease-in-out infinite alternate;
+}
+
+.neongreen_txt {
+    animation: neonGreenText 1.5s ease-in-out infinite alternate;
+}
+
+
+/* --- N E O N    T E X T --- */
+
+@keyframes neonBlueText {
+    from {
+        text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #228dff, 0 0 70px #228dff, 0 0 80px #228dff, 0 0 100px #228dff, 0 0 150px #228dff;
+    }
+    to {
+        text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #228dff, 0 0 35px #228dff, 0 0 40px #228dff, 0 0 50px #228dff, 0 0 75px #228dff;
+    }
+}
+
+@keyframes neonOrangeText {
+    from {
+        text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #ff9900, 0 0 70px #ff9900, 0 0 80px #ff9900, 0 0 100px #ff9900, 0 0 150px #ff9900;
+    }
+    to {
+        text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #ff9900, 0 0 35px #ff9900, 0 0 40px #ff9900, 0 0 50px #ff9900, 0 0 75px #ff9900;
+    }
+}
+
+@keyframes neonGreenText {
+    from {
+        text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #b6ff00, 0 0 70px #b6ff00, 0 0 80px #b6ff00, 0 0 100px #b6ff00, 0 0 150px #b6ff00;
+    }
+    to {
+        text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #b6ff00, 0 0 35px #b6ff00, 0 0 40px #b6ff00, 0 0 50px #b6ff00, 0 0 75px #b6ff00;
+    }
+}
+
+
+/* --- Shake Animation --- */
+
+@keyframes shake-little {
+    0%,
+    100% {
+        transform: translate(0, 0) rotate(0);
+    }
+    2% {
+        transform: translate(1px, 0px) rotate(0.5deg);
+    }
+    6% {
+        transform: translate(1px, 1px) rotate(0.5deg);
+    }
+    12% {
+        transform: translate(0px, 0px) rotate(0.5deg);
+    }
+    18% {
+        transform: translate(1px, 0px) rotate(0.5deg);
+    }
+    24% {
+        transform: translate(1px, 1px) rotate(0.5deg);
+    }
+    30% {
+        transform: translate(0px, 0px) rotate(0.5deg);
+    }
+    36% {
+        transform: translate(1px, 1px) rotate(0.5deg);
+    }
+    42% {
+        transform: translate(1px, 0px) rotate(0.5deg);
+    }
+    48% {
+        transform: translate(1px, 1px) rotate(0.5deg);
+    }
+    54% {
+        transform: translate(0px, 1px) rotate(0.5deg);
+    }
+    60% {
+        transform: translate(1px, 1px) rotate(0.5deg);
+    }
+    66% {
+        transform: translate(1px, 0px) rotate(0.5deg);
+    }
+    72% {
+        transform: translate(1px, 1px) rotate(0.5deg);
+    }
+    78% {
+        transform: translate(0px, 0px) rotate(0.5deg);
+    }
+    84% {
+        transform: translate(1px, 1px) rotate(0.5deg);
+    }
+    90% {
+        transform: translate(0px, 1px) rotate(0.5deg);
+    }
+    96% {
+        transform: translate(1px, 0px) rotate(0.5deg);
+    }
+}
+
+.shake-little {
+    display: inline-block;
+    transform-origin: center center;
+    animation-name: shake-little;
+    animation-duration: 100ms;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+}
+
+.shake-freeze,
+.shake-constant.shake-constant--hover:hover,
+.shake-trigger:hover .shake-constant.shake-constant--hover {
+    animation-play-state: paused;
+}
+
+.shake-freeze:hover,
+.shake-trigger:hover .shake-freeze,
+.shake-little:hover,
+.shake-trigger:hover .shake-little {
+    animation-play-state: running;
+}
+
+
+/* --- Pièces capturées --- */
+
+#captured-pieces {
+    width: 500px;
+    margin: 10px auto;
+    display: flex;
+    justify-content: space-between;
+    font-size: 20px;
+    padding: 10px;
+    background: #ddd;
+    border-radius: 10px;
+    color: #222;
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.15);
+}
+
+
+/* 🌙 DARK MODE */
+
+body.dark-mode {
+    background: #121212;
+    color: #eee;
+}
+
+body.dark-mode #turn {
+    background: #1e1e1e;
+    color: #fff;
+    border-color: #555;
+}
+
+body.dark-mode .cellprefix {
+    color: #ccc;
+}
+
+body.dark-mode .grey {
+    background: #3e3a36 !important;
+    /* case foncée */
+}
+
+body.dark-mode .gamecell:not(.grey) {
+    background: #8d8c87 !important;
+    /* case claire */
+}
+
+body.dark-mode #captured-pieces {
+    background: #222;
+    color: #eee;
+    box-shadow: 0 0 6px rgba(255, 255, 255, 0.05);
+}
+
+body.dark-mode .gamecell {
+    border: 1px solid #5a5a5a;
+    color: #f5f5f5;
+}
+
+#darkmode-toggle {
+    text-align: center;
+    margin-top: 10px;
+}
+
+#darkmode-toggle button {
+    padding: 8px 16px;
+    border: none;
+    background: #444;
+    color: #fff;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background 0.3s ease;
+}
+
+#darkmode-toggle button:hover {
+    background: #666;
+}
